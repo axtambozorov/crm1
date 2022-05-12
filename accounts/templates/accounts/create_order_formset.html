@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h3>Create Order</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ formset.management_form }}
+        {% for form in formset %}
+        <p>{{ form }}</p>
+        {% endfor %}
+        <button class="btn btn-success btn-sm">Create</button>
+    </form>
+{% endblock %}

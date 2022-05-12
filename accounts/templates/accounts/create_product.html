@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h3>Create Product</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success btn-sm">Create</button>
+    </form>
+{% endblock %}

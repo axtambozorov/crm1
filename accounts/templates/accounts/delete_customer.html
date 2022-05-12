@@ -1,0 +1,11 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+    <p>Are you sure delete {{ customer.name }}</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <a class="btn btn-primary btn-danger" href="{% url 'main' %}">Cancel</a>
+        <button  class="btn btn-sm btn-primary">Yes</button>
+    </form>
+{% endblock %}

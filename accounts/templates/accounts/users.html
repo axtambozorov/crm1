@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+
+
+
+{% block content %}
+{% include 'accounts/status.html' %}
+<div class="row">
+      <div class="col">
+         <div class="card card-body">
+            <form method="get">
+               {{ myFilter.form }}
+               <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+         </div>
+      </div>
+   </div>
+<br>
+   <div class="row">
+      <div class="col">
+         <div class="card card-body">
+            <table class="table">
+               <tr>
+                  <th>Product</th>
+                  <th>Category</th>
+                  <th>Date Ordered</th>
+                  <th>Status</th>
+
+               {% for order in orders %}
+                  <tr>
+                     <td>{{ order.product }}</td>
+                     <td>{{ order.product.category }}</td>
+                     <td>{{ order.date_created }}</td>
+                     <td>{{ order.status }}</td>
+                  </tr>
+               {% endfor %}
+
+
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>
+
+{% endblock %}
